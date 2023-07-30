@@ -21,6 +21,10 @@ def run_smartctl_cmd(args: list) -> Tuple[str, int]:
     """
     Runs the smartctl command on the system
     """
+
+    if os.environ.get("SMARTCTL_EXPORTER_NOCHECK_STANDBY", "false") == "true":
+        args.append("--nocheck=standby")
+
     out = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     stdout, stderr = out.communicate()
 
