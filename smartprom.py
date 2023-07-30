@@ -16,7 +16,6 @@ SAT_TYPES = ['sat', 'usbjmicron', 'usbprolific', 'usbsunplus']
 NVME_TYPES = ['nvme', 'sntasmedia', 'sntjmicron', 'sntrealtek']
 SCSI_TYPES = ['scsi']
 
-
 def run_smartctl_cmd(args: list) -> Tuple[str, int]:
     """
     Runs the smartctl command on the system
